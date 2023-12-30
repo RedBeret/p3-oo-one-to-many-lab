@@ -1,5 +1,6 @@
 class Pet:
-    PET_TYPES = ["dog", "cat", "rodent", "bird", "reptile", "exotic"]
+
+    PET_TYPES = ['dog', 'cat', 'rodent', 'bird', 'reptile', 'exotic']
     all = []
 
     def __init__(self, name, pet_type, owner=None):
@@ -15,7 +16,7 @@ class Pet:
     @pet_type.setter
     def pet_type(self, pet_type):
         if pet_type not in self.PET_TYPES:
-            raise Exception("Not a valid pet type.")
+            raise Exception('Not a valid pet type.')
         self._pet_type = pet_type
 
     @property
@@ -29,6 +30,7 @@ class Pet:
         self._owner = owner
 
 
+
 class Owner:
     def __init__(self, name):
         self.name = name
@@ -39,7 +41,7 @@ class Owner:
     def add_pet(self, pet):
         if not isinstance(pet, Pet):
             raise Exception("Input object is not of type Pet")
-        pet.owner = self
+        pet.owner = self            
 
     def get_sorted_pets(self):
         return sorted(self.pets(), key=lambda pet: pet.name)
